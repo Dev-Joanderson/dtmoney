@@ -1,57 +1,62 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
-export const GlobalStyle = createGlobalStyle `
-    :root{
-        --background:#F0F2F5;
-        --red:#E62E4D;
-        --blue:#5429CC;
-        --blue-light:#6933FF;
-        --green:#33CC95;
-        --text-title:#363F5F;
-        --text-body:#969CB3;
-        --shape:#FFFFFF;
+
+export const GlobalStyle = createGlobalStyle`
+    :root {
+        --background: #f0f2f5;
+        --red: #e52e4d;
+        --blue: #5429cc;
+        --green: #33cc95;
+
+        --blue-light: #6933ff;
+
+        --text-title: #363f5f;
+        --text-body: #969cb3;
+
+        --shape: #ffffff;
+    }
+    
+    * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+    }
+    html{ 
+        @media (max-width: 1080px){
+            font-size: 93.75%; // igual a 15px -- conta para saber quanto 93.75% sera em px, 16x0,9375, pois por default todas as fonte começam com 16px
+        }
+        
+        @media (max-width: 720px){
+            font-size: 87.5%; // igual a 14px 
+        }
+    }
+    body { 
+     background: var(--background);
+     -webkit-font-smoothing: antialiased;
     }
 
-    *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;    
-    }
-    html{
-        @media(max-width:1080px){
-            font-size:93.75%;
-        }
-        @media(max-width:720px){
-            font-size:87.5%
-        }
-    }
-    body{
-        background: var(--backgroud);
-        -webkit-font-smoothing: antialiased;
-    }
-    body,input,textarea,button{
+    body, input, textarea, button {
         font-family: 'Poppins', sans-serif;
-        font-weight:400;
-    } 
-
-    h1, h2, h3, h4, h5, strong{
-        font-weight:400;
-
+        font-weight: 400;
     }
 
-    .button{
+    h1, h2, h3, h4, h5, h6, strong {
+        font-weight: 600;
+    }    
+
+    button { 
         cursor: pointer;
-
     }
-    [disabled]{
-        opacity:0.6;
-        cursor:not-allowed;
+
+    [disabled] {
+        opacity: 0.6;
+        cursor: not-allowed;
     }
 
     .react-modal-overlay {
         background: rgba(0, 0, 0, 0.5);
 
-        position:fixed;
+        position: fixed;
         top: 0;
         bottom: 0;
         right: 0;
@@ -60,32 +65,28 @@ export const GlobalStyle = createGlobalStyle `
         display: flex;
         align-items: center;
         justify-content: center;
-       
     }
-    .react-modal-content {
-        
+
+    .react-modal-content{
         width: 100%;
         max-width: 576px;
-        
         background: var(--background);
         padding: 3rem;
         position: relative;
-        border-radius: 0.25rem;
+        border-radius: 0.24rem;
     }
 
     .react-modal-close {
         position: absolute;
         right: 1.5rem;
-        right: 1.5rem;
+        top: 1.5rem;
         border: 0;
-        background:transparent;
+        background: transparent;
 
-        transition: filter(0,2s);
+        transition: filter 0.2s ;
 
-        &:hover{
-            filter:brightness(0.8);
+        &:hover {
+            filter: brightness(0.8);
         }
     }
-
-
 `
