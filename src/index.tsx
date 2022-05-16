@@ -44,12 +44,12 @@ createServer({
 
         return schema.create('transaction', data)
 
-      })
+      });
 
-  }  
+  }, 
 
 
-})
+});
 
 ReactDOM.render(
   <React.StrictMode>
