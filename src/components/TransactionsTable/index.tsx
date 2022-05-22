@@ -4,7 +4,8 @@ import { TransactionsContext } from '../../TrasactionsContext';
 import { Container } from './styles';
 
 export function TransitionsTable() {
-    const transactions = useContext(TransactionsContext);
+    const { transactions } = useContext(TransactionsContext);
+   
     return (
         <Container>
             <table>
